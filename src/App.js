@@ -15,10 +15,18 @@
 //   // 여기 사이에 아무것도 안 들어가면 기본 값 저장함
 //   // children 값을 저 사이에 적으면 children 값에 들어감
 // };
-import EventPractive from "./EventPractive.js";
-
-const App = () => {
-  return <EventPractive />
-};
-
+import { Component } from "react";
+import RefSample from "./RefSample";
+import ScrollBox from "./ScrollBox";
+import ValidationSample from "./ValidationSample";
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <ScrollBox ref={(ref)=>this.ScrollBox=ref}/>
+        <button onClick={() => this.ScrollBox.scrollBottom()}>맨 밑으로</button>
+      </div>
+    );
+  }
+}
 export default App;
